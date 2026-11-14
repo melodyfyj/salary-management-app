@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "salary-management:build:production"
+              "buildTarget": "salary-management:build:production"
             },
             "development": {
-              "browserTarget": "salary-management:build:development"
+              "buildTarget": "salary-management:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "salary-management:build"
+            "buildTarget": "salary-management:build"
           }
         },
         "test": {
