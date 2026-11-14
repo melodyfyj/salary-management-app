@@ -60,9 +60,10 @@ interface salary {
 }
 
 @Component({
-  selector: 'app-employee-profile',
-  templateUrl: './employee-profile.component.html',
-  styleUrls: ['./employee-profile.component.css']
+    selector: 'app-employee-profile',
+    templateUrl: './employee-profile.component.html',
+    styleUrls: ['./employee-profile.component.css'],
+    standalone: false
 })
 export class EmployeeProfileComponent implements OnInit {
 

@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ChangePasswordService } from 'src/app/service/change-password/change-password.service';
 
 @Component({
-  selector: 'app-change-password',
-  templateUrl: './change-password.component.html',
-  styleUrls: ['./change-password.component.css']
+    selector: 'app-change-password',
+    templateUrl: './change-password.component.html',
+    styleUrls: ['./change-password.component.css'],
+    standalone: false
 })
 export class ChangePasswordComponent implements OnInit {
   username: string = "";

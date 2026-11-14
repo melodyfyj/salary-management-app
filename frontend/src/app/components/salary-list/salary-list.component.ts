@@ -19,9 +19,10 @@ interface Salary {
 }
 
 @Component({
-  selector: 'app-salary-list',
-  templateUrl: './salary-list.component.html',
-  styleUrls: ['./salary-list.component.css']
+    selector: 'app-salary-list',
+    templateUrl: './salary-list.component.html',
+    styleUrls: ['./salary-list.component.css'],
+    standalone: false
 })
 export class SalaryListComponent implements OnInit {
 
