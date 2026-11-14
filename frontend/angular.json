@@ -102,5 +102,7 @@
       }
     }
   },
-  "defaultProject": "salary-management"
+  "cli": {
+    "analytics": false
+  }
 }
