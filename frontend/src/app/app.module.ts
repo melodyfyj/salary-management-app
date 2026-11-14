@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
@@ -16,26 +16,19 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { UpdateSalaryComponent } from './components/update-salary/update-salary.component';
 
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    AdminComponent,
-    ChangePasswordComponent,
-    AddComponent,
-    SalaryListComponent,
-    EmployeeProfileComponent,
-    NavBarComponent,
-    UpdateSalaryComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    RouterModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        LoginComponent,
+        AdminComponent,
+        ChangePasswordComponent,
+        AddComponent,
+        SalaryListComponent,
+        EmployeeProfileComponent,
+        NavBarComponent,
+        UpdateSalaryComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        RouterModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
