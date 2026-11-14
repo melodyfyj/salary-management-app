@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SalaryManagement.Models;
 
+#nullable disable
+
 namespace SalaryManagement.Migrations
 {
     [DbContext(typeof(SalaryMgtContext))]
@@ -15,16 +17,18 @@ namespace SalaryManagement.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.13")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "10.0.15")
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("SalaryManagement.Models.BankDetail", b =>
                 {
                     b.Property<int>("BankDetailId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BankDetailId"));
 
                     b.Property<string>("AccountNo")
                         .HasMaxLength(18)
@@ -47,7 +51,7 @@ namespace SalaryManagement.Migrations
 
                     b.HasIndex("EmployeeId");
 
-                    b.ToTable("BankDetail");
+                    b.ToTable("BankDetail", (string)null);
 
                     b.HasData(
                         new
@@ -137,8 +141,9 @@ namespace SalaryManagement.Migrations
                 {
                     b.Property<int>("EmployeeId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployeeId"));
 
                     b.Property<int>("AccessLevel")
                         .HasColumnType("int");
@@ -203,7 +208,7 @@ namespace SalaryManagement.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("Employee");
+                    b.ToTable("Employee", (string)null);
 
                     b.HasData(
                         new
@@ -297,8 +302,9 @@ namespace SalaryManagement.Migrations
                 {
                     b.Property<int>("SalaryId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SalaryId"));
 
                     b.Property<decimal>("BasicSalary")
                         .HasColumnType("decimal(18,2)");
@@ -337,7 +343,7 @@ namespace SalaryManagement.Migrations
 
                     b.HasIndex("EmployeeId");
 
-                    b.ToTable("Salary");
+                    b.ToTable("Salary", (string)null);
 
                     b.HasData(
                         new
