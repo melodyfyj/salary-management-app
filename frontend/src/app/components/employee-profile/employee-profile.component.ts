@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { GetEmpService } from 'src/app/service/get-emp/get-emp.service';
 import { Router } from '@angular/router';
 
@@ -63,6 +63,7 @@ interface salary {
     selector: 'app-employee-profile',
     templateUrl: './employee-profile.component.html',
     styleUrls: ['./employee-profile.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class EmployeeProfileComponent implements OnInit {

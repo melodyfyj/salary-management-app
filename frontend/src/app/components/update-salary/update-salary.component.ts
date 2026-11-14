@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { SalaryListService }  from 'src/app/service/salary-list/salary-list.service'; 
 import { UpdateSalaryService }  from 'src/app/service/update-salary/update-salary.service'; 
 import { Router } from '@angular/router';
@@ -22,6 +22,7 @@ interface Salary {
     selector: 'app-update-salary',
     templateUrl: './update-salary.component.html',
     styleUrls: ['./update-salary.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class UpdateSalaryComponent implements OnInit {

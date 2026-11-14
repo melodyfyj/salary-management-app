@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AddService } from 'src/app/service/add/add.service';
 import { GetEmpService } from 'src/app/service/get-emp/get-emp.service';
@@ -39,6 +39,7 @@ interface empDetails{
     selector: 'app-add',
     templateUrl: './add.component.html',
     styleUrls: ['./add.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 
