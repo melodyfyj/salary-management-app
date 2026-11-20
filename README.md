@@ -2,7 +2,7 @@
 
 A full-stack web app where an administrator manages employee accounts and salaries, and employees log in to view their own profile and salary information.
 
-Built with **ASP.NET Core Web API (.NET 10)** and **Angular 22**.
+Built with **ASP.NET Core Web API (.NET 10)** and **Angular 22** (Originally built in 2022 with .NET 5 and Angular 13).
 
 ## Demo
 
